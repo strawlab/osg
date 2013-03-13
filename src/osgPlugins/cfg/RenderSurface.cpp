@@ -116,6 +116,22 @@ RenderSurface::RenderSurface( void )
         }
     }
 
+    _sRGBFlag = false;
+
+    char *sRGB_envptr = getenv( "PRODUCER_SRGB" );
+    if( sRGB_envptr != NULL && *sRGB_envptr != 0 )
+    {
+        if (strcmp(sRGB_envptr,"true")==0 || strcmp(sRGB_envptr,"True")==0 || strcmp(sRGB_envptr,"TRUE")==0)
+        {
+            _sRGBFlag = true;
+        }
+        else
+        {
+            _sRGBFlag = false;
+        }
+    }
+
+
     _decorations     = true;
     _useCursorFlag   = true;
 
@@ -679,5 +695,15 @@ void RenderSurface::useOverrideRedirect(bool flag)
 bool RenderSurface::usesOverrideRedirect()
 {
     return _overrideRedirectFlag;
+}
+
+void RenderSurface::useSRGB(bool flag)
+{
+    _sRGBFlag = flag;
+}
+
+bool RenderSurface::usesSRGB()
+{
+    return _sRGBFlag;
 }
 

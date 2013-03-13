@@ -1,3 +1,8 @@
+2013-02-18 11:30  astraw
+
+        * various files (fill in from git diff): Add support for sRGB
+	buffers.
+
 2011-07-31 07:50  robert
 
 	* CMakeLists.txt: Changed release candidate numbe for 3.0.1

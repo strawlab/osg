@@ -78,6 +78,8 @@ bool PixelBufferX11::createVisualInfo()
     attributes.push_back(GLX_BLUE_SIZE); attributes.push_back(_traits->blue);
     attributes.push_back(GLX_DEPTH_SIZE); attributes.push_back(_traits->depth);
     
+    if (_traits->sRGB) { attributes.push_back(GLX_FRAMEBUFFER_SRGB_CAPABLE_EXT); }
+
     if (_traits->alpha) { attributes.push_back(GLX_ALPHA_SIZE); attributes.push_back(_traits->alpha); }
     
     if (_traits->stencil) { attributes.push_back(GLX_STENCIL_SIZE); attributes.push_back(_traits->stencil); }

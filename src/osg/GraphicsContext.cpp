@@ -189,6 +189,7 @@ GraphicsContext::Traits::Traits(DisplaySettings* ds):
             sharedContext(0),
             setInheritedWindowPixelFormat(false),
             overrideRedirect(false),
+            sRGB(false),
             swapMethod( DisplaySettings::SWAP_DEFAULT )
 {
     if (ds)

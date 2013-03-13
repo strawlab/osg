@@ -233,6 +233,10 @@ class RenderSurface : public osg::Referenced
          void useOverrideRedirect(bool);
          bool usesOverrideRedirect();
 
+        /** Use sRGB buffers. Using this sets the colorspace to correct for gamma. */
+         void useSRGB(bool);
+         bool usesSRGB();
+
        /** Request whether the window should have a visible cursor.  If true, the 
          * windowing system's default cursor will be assigned to the window.  If false
          * the window will not have a visible cursor. */

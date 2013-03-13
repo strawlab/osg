@@ -85,6 +85,7 @@ static osg::GraphicsContext::Traits* buildTrait(RenderSurface& rs)
     traits->pbuffer = (rs.getDrawableType()==osgProducer::RenderSurface::DrawableType_PBuffer);
 
     traits->overrideRedirect = rs.usesOverrideRedirect();
+    traits->sRGB = rs.usesSRGB();
 
     return traits;
  }
